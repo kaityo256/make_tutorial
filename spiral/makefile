@@ -5,7 +5,7 @@ all: $(PNG)
 
 
 %.png: %.dat
-	python convert.py $<
+	python3 convert.py $<
 
 
 gif: $(PNG)
