@@ -1,7 +1,15 @@
+DAT=$(shell ls *.dat)
+PNG=$(DAT:%.dat=%.png)
+
+all: $(PNG)
 
 
-gif:
-	convert -delay 5 -loop 0 -resize 50% fig*.png spiral.gif
+%.png: %.dat
+	python convert.py $<
+
+
+gif: $(PNG)
+	convert -delay 5 -loop 0 -resize 50% spiral*.png spiral.gif
 
 clean:
-	rm -f *.png spiral.gif
+	rm -f spiral.gif spiral*.dat spiral*.png
