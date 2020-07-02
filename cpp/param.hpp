@@ -1,1 +1,1 @@
-const int N = 20;
+const int N = 10;
